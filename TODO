@@ -15,12 +15,12 @@
     - [X] Create directory `example`
     - [X] Initialize Composer `composer init`
     - [X] Dump autoload `composer dump-autoload`
-    - [ ] Update requirements in `config/requirements.cfg`
-    - [ ] Perform initial push to GitHub
-    - [ ] Create `stable` branch from `dev` branch on GitHub
-    - [ ] Set `stable` branch as default branch on GitHub
-    - [ ] Create a package on Packagist
-    - [ ] Create a release on GitHub
+    - [X] Update requirements in `config/requirements.cfg`
+    - [X] Perform initial push to GitHub
+    - [X] Create `stable` branch from `dev` branch on GitHub
+    - [X] Set `stable` branch as default branch on GitHub
+    - [X] Create a package on Packagist
+    - [X] Create a release on GitHub
 - [X] Create the core class
     - [X] Create the `Core` class
     - [X] Create the `Core` class constructor
@@ -49,4 +49,4 @@
     - [X] Remove unnecessary dependencies
     - [X] Fix coding standards
     - [X] Add method annotations
-- [ ] Ready to publish
+- [X] Ready to publish
