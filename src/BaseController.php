@@ -66,27 +66,32 @@ class BaseController {
         $this->Logger->debug("Public: " . $this->Public);
         $this->Logger->debug("Permission: " . $this->Permission);
         $this->Logger->debug("Level: " . $this->Level);
-        $this->Logger->debug("isAuthenticated: " . $this->Auth->Authentication->isAuthenticated());
-        $this->Logger->debug("hasPermission: " . $this->Auth->Authorization->hasPermission($this->Namespace,$this->Level));
+        $this->Logger->debug("Auth: " . $this->Auth);
+        if($this->Auth){
+            $this->Logger->debug("isAuthenticated: " . $this->Auth->Authentication->isAuthenticated());
+            $this->Logger->debug("hasPermission: " . $this->Auth->Authorization->hasPermission($this->Namespace,$this->Level));
+        }
 
         // Check if the controller is public
-        if(!$this->Public){
+        if($this->Auth){
+            if(!$this->Public){
 
-            // Check if the user is authenticated
-            if(!$this->Auth->Authentication->isAuthenticated()){
-
-                // Send the output
-                $this->output('Unauthorized', array('HTTP/1.1 401 Unauthorized'));
-            }
-
-            // Check if the method requires a permission
-            if($this->Permission){
-
-                // Check if the user has the required permission
-                if(!$this->Auth->Authorization->hasPermission($this->Namespace,$this->Level)){
+                // Check if the user is authenticated
+                if(!$this->Auth->Authentication->isAuthenticated()){
 
                     // Send the output
-                    $this->output('Forbidden', array('HTTP/1.1 403 Forbidden'));
+                    $this->output('Unauthorized', array('HTTP/1.1 401 Unauthorized'));
+                }
+
+                // Check if the method requires a permission
+                if($this->Permission){
+
+                    // Check if the user has the required permission
+                    if(!$this->Auth->Authorization->hasPermission($this->Namespace,$this->Level)){
+
+                        // Send the output
+                        $this->output('Forbidden', array('HTTP/1.1 403 Forbidden'));
+                    }
                 }
             }
         }
