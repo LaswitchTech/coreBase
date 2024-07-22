@@ -4,6 +4,7 @@
 namespace LaswitchTech\coreBase;
 
 // Import additionnal class into the global namespace
+use LaswitchTech\coreConfigurator\Configurator;
 use LaswitchTech\coreLogger\Logger;
 use LaswitchTech\coreCSRF\CSRF;
 
