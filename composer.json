@@ -16,6 +16,6 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "laswitchtech/core-logger": "^1.0"
+        "laswitchtech/core-database": "^1.0"
     }
 }
