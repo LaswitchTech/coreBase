@@ -16,6 +16,7 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "laswitchtech/core-database": "^1.0"
+        "laswitchtech/core-database": "^1.0",
+        "laswitchtech/core-csrf": "^1.0"
     }
 }

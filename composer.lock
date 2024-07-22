@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "db6b91a87da02787dec652b7ecf5fe1c",
+    "content-hash": "b991a34955f0864ebcd3ffff630a7370",
     "packages": [
         {
             "name": "laswitchtech/core-configurator",
@@ -48,6 +48,52 @@
                 }
             ],
             "time": "2024-06-26T23:53:53+00:00"
+        },
+        {
+            "name": "laswitchtech/core-csrf",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LaswitchTech/coreCSRF.git",
+                "reference": "4f0e3c5485e060234b0dd159775d01e2b21de092"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LaswitchTech/coreCSRF/zipball/4f0e3c5485e060234b0dd159775d01e2b21de092",
+                "reference": "4f0e3c5485e060234b0dd159775d01e2b21de092",
+                "shasum": ""
+            },
+            "require": {
+                "laswitchtech/core-logger": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "LaswitchTech\\coreCSRF\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Louis Ouellet",
+                    "email": "louis_ouellet@hotmail.com"
+                }
+            ],
+            "description": "CSRF Library for the Laswitch Core Framework",
+            "support": {
+                "issues": "https://github.com/LaswitchTech/coreCSRF/issues",
+                "source": "https://github.com/LaswitchTech/coreCSRF/tree/v1.0.2"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/LaswitchTech",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-06-27T00:08:04+00:00"
         },
         {
             "name": "laswitchtech/core-database",
