@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a2d5a78734960baacc4db810c004c811",
+    "content-hash": "db6b91a87da02787dec652b7ecf5fe1c",
     "packages": [
         {
             "name": "laswitchtech/core-configurator",
@@ -50,17 +50,63 @@
             "time": "2024-06-26T23:53:53+00:00"
         },
         {
-            "name": "laswitchtech/core-logger",
-            "version": "v1.0.3",
+            "name": "laswitchtech/core-database",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/LaswitchTech/coreLogger.git",
-                "reference": "cc77f55daf55ee27565d160819683c2e4673d48f"
+                "url": "https://github.com/LaswitchTech/coreDatabase.git",
+                "reference": "7e10f95a08f51889bd9bfe352e7bacf70c05c7b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LaswitchTech/coreLogger/zipball/cc77f55daf55ee27565d160819683c2e4673d48f",
-                "reference": "cc77f55daf55ee27565d160819683c2e4673d48f",
+                "url": "https://api.github.com/repos/LaswitchTech/coreDatabase/zipball/7e10f95a08f51889bd9bfe352e7bacf70c05c7b7",
+                "reference": "7e10f95a08f51889bd9bfe352e7bacf70c05c7b7",
+                "shasum": ""
+            },
+            "require": {
+                "laswitchtech/core-net": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "LaswitchTech\\coreDatabase\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Louis Ouellet",
+                    "email": "louis_ouellet@hotmail.com"
+                }
+            ],
+            "description": "Database Library for the Laswitch Core Framework",
+            "support": {
+                "issues": "https://github.com/LaswitchTech/coreDatabase/issues",
+                "source": "https://github.com/LaswitchTech/coreDatabase/tree/v1.0.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/LaswitchTech",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-06-27T00:06:59+00:00"
+        },
+        {
+            "name": "laswitchtech/core-logger",
+            "version": "v1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LaswitchTech/coreLogger.git",
+                "reference": "6201482b1004df75a707cc2223c22742896c445a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LaswitchTech/coreLogger/zipball/6201482b1004df75a707cc2223c22742896c445a",
+                "reference": "6201482b1004df75a707cc2223c22742896c445a",
                 "shasum": ""
             },
             "require": {
@@ -85,7 +131,7 @@
             "description": "Logger Library for the Laswitch Core Framework",
             "support": {
                 "issues": "https://github.com/LaswitchTech/coreLogger/issues",
-                "source": "https://github.com/LaswitchTech/coreLogger/tree/v1.0.3"
+                "source": "https://github.com/LaswitchTech/coreLogger/tree/v1.0.4"
             },
             "funding": [
                 {
@@ -93,7 +139,53 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-06-26T23:58:30+00:00"
+            "time": "2024-07-18T17:54:55+00:00"
+        },
+        {
+            "name": "laswitchtech/core-net",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LaswitchTech/coreNet.git",
+                "reference": "2abe7a9e18fc9abf6b90e5477299d3147d36a762"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LaswitchTech/coreNet/zipball/2abe7a9e18fc9abf6b90e5477299d3147d36a762",
+                "reference": "2abe7a9e18fc9abf6b90e5477299d3147d36a762",
+                "shasum": ""
+            },
+            "require": {
+                "laswitchtech/core-logger": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "LaswitchTech\\coreNet\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Louis Ouellet",
+                    "email": "louis_ouellet@hotmail.com"
+                }
+            ],
+            "description": "Network Toolkit Library for the Laswitch Core Framework",
+            "support": {
+                "issues": "https://github.com/LaswitchTech/coreNet/issues",
+                "source": "https://github.com/LaswitchTech/coreNet/tree/v1.0.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/LaswitchTech",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-06-26T23:59:49+00:00"
         }
     ],
     "packages-dev": [],
