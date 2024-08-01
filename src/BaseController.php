@@ -66,10 +66,14 @@ class BaseController {
         $this->Logger->debug("Public: " . $this->Public);
         $this->Logger->debug("Permission: " . $this->Permission);
         $this->Logger->debug("Level: " . $this->Level);
-        $this->Logger->debug("Auth: " . $this->Auth);
+        $this->Logger->debug("Auth: " . is_null($this->Auth));
         if($this->Auth){
-            $this->Logger->debug("isAuthenticated: " . $this->Auth->Authentication->isAuthenticated());
-            $this->Logger->debug("hasPermission: " . $this->Auth->Authorization->hasPermission($this->Namespace,$this->Level));
+            if($this->Auth->Authentication){
+                $this->Logger->debug("isAuthenticated: " . $this->Auth->Authentication->isAuthenticated());
+            }
+            if($this->Auth->Authorization){
+                $this->Logger->debug("hasPermission: " . $this->Auth->Authorization->hasPermission($this->Namespace,$this->Level));
+            }
         }
 
         // Check if the controller is public
