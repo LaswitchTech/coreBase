@@ -54,7 +54,7 @@ class BaseController {
         $this->CSRF = new CSRF();
 
         // Get the request method
-        $this->Method = $_SERVER["REQUEST_METHOD"];
+        $this->Method = $_SERVER["REQUEST_METHOD"] ?? 'GET';
 
         // Add URI segments to the namespace
         foreach($this->getUriSegments() as $Segment){
@@ -77,7 +77,7 @@ class BaseController {
         }
 
         // Check if the controller is public
-        if($this->Auth){
+        if($this->Auth && $this->Auth->Authentication && $this->Auth->Authorization){
             if(!$this->Public){
 
                 // Check if the user is authenticated
@@ -123,7 +123,7 @@ class BaseController {
     protected function getUriSegments() {
 
         // Get the URI segments
-        $URI = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+        $URI = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
 
         // Convert the URI to an array
         $URI = explode( '/', $URI );
@@ -320,31 +320,35 @@ class BaseController {
      */
     protected function output($data, $httpHeaders=array()) {
 
-        // Remove the default Set-Cookie header
-        header_remove('Set-Cookie');
+        // Check if header information can be sent
+        if (!headers_sent()) {
 
-        // Add the custom headers
-        if (is_array($httpHeaders) && count($httpHeaders)) {
+            // Remove the default Set-Cookie header
+            header_remove('Set-Cookie');
 
-            // Add the headers
-            foreach ($httpHeaders as $httpHeader) {
+            // Add the custom headers
+            if (is_array($httpHeaders) && count($httpHeaders)) {
 
-                // Add the header
-                header($httpHeader);
+                // Add the headers
+                foreach ($httpHeaders as $httpHeader) {
+
+                    // Add the header
+                    header($httpHeader);
+                }
             }
+
+            // Check if the data is an array or object
+            if(is_array($data) || is_object($data)){
+
+                // Convert the data to JSON
+                $data = json_encode($data,JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+            }
+
+            // Send the output
+            echo $data;
+
+            // Exit the script
+            exit;
         }
-
-        // Check if the data is an array or object
-        if(is_array($data) || is_object($data)){
-
-            // Convert the data to JSON
-            $data = json_encode($data,JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
-        }
-
-        // Send the output
-        echo $data;
-
-        // Exit the script
-        exit;
     }
 }
